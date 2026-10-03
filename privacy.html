@@ -1,0 +1,36 @@
+<!doctype html><html lang="zh-CN"><head><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%23174669%22%2F%3E%3Cpath%20d%3D%22M13%209v14M20%209v14%22%20stroke%3D%22white%22%20stroke-width%3D%224%22%2F%3E%3C%2Fsvg%3E"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SleepPause 隐私政策</title><style>body{font-family:"Microsoft YaHei",system-ui,sans-serif;line-height:1.8;color:#20252b;background:#f5f6f8;margin:0}main{max-width:850px;margin:32px auto;padding:32px;background:white;border-radius:12px}h1{font-size:28px}h2{font-size:20px;margin-top:28px}table{table-layout:fixed;overflow-wrap:anywhere;border-collapse:collapse;width:100%}th,td{border:1px solid #ddd;padding:10px;text-align:left;vertical-align:top}a{color:#1763ad}.draft{background:#fff4dc;padding:16px;border-left:4px solid #b97900}.missing{color:#9c3100;font-weight:bold}@media(max-width:650px){main{margin:0;padding:20px;border-radius:0}table{font-size:14px}}</style></head><body><main><nav aria-label="协议导航"><a href="privacy.html">隐私政策</a> · <a href="terms.html">用户协议</a></nav>
+<h1>SleepPause 隐私政策</h1>
+<p class="draft">本政策适用于当前开发测试版。健康数据功能尚未启用，相关段落说明已确定的开发计划；接入前将核对具体 SDK 和处理范围，并在首次读取前取得相应授权。</p>
+<p>应用名称：SleepPause<br>应用包名：com.example.sleeppause<br>个人开发者：<span >薛粟中</span><br>联系邮箱：<span >3047448535@qq.com</span><br>更新与生效日期：<span >2026/10/10span></p>
+<h2>一、功能与适用范围</h2>
+<p>SleepPause 是 Android 听书辅助应用。当前测试版可在用户授予通知使用权后，通过用户点击按钮尝试暂停喜马拉雅播放。“开始监听”按钮目前仅切换界面状态，不代表已读取健康数据。实时心率辅助暂停、睡眠记录分析和夜间心率趋势为计划开发的功能，尚未启用。</p>
+<p>本政策区分现有功能与后续计划。健康功能完成后，开发者将核对并更新数据说明，在首次读取前向用户说明并获取相应授权。未获批或未授权的健康数据不会被读取。</p>
+<h2>二、处理的数据与用途</h2>
+<table><thead><tr><th>功能</th><th>数据及处理目的</th><th>当前状态</th></tr></thead><tbody>
+<tr><td>媒体暂停</td><td>通过 Android 媒体会话接口获取活动媒体应用的包名、播放状态及会话控制对象，用于查找正在播放的喜马拉雅并发送暂停指令。当前代码不读取或保存通知正文。</td><td>已实现；需用户授予通知使用权并主动点击。</td></tr>
+<tr><td>心率辅助暂停</td><td>拟读取获授权的实时心率及与分析必要相关的时间信息，在本机短时分析变化，估计可能入睡并尝试暂停音频。</td><td>计划开发；回调字段、可用性及后台限制待验证。</td></tr>
+<tr><td>睡眠回顾</td><td>拟读取已同步的睡眠记录，包括接口实际提供的入睡、起床时间、时长与睡眠阶段，用于单晚回顾及近期趋势展示。</td><td>计划开发；具体字段与查询时间范围取决于获批能力及实际返回数据。</td></tr>
+<tr><td>夜间心率趋势</td><td>拟读取获授权的历史心率记录及时间信息，结合睡眠区间显示夜间心率曲线。</td><td>计划开发；不申请写入数据权限。</td></tr>
+</tbody></table>
+<p>心率和睡眠属于敏感个人信息。相关功能将以明确目的、必要范围和用户单独同意为前提；用户拒绝或撤回健康授权，不影响已授权的手动媒体暂停功能。</p>
+<h2>三、拟采用的保存与传输方式</h2>
+<p>实时心率计划仅在手机内存中短时处理，停止功能或结束会话后清除。睡眠和历史心率计划在用户查看时按需读取并展示，不另行长期保存，不写入应用数据库、文件、日志或可备份数据。退出相关页面后清除应用持有的展示数据；这些清理机制尚待实现与验证。</p>
+<p>SleepPause 不计划建立健康数据服务器，不向自己的服务器上传健康数据，不计划用于广告、出售或对外提供健康数据。华为帐号、运动健康、HMS Core 及其相关服务的认证、授权、同步和数据处理另受其适用说明约束。上述计划不表示华为的数据全部在本机处理或完全不经网络。</p>
+<h2>四、系统权限与授权</h2>
+<p>通知使用权由用户在 Android 系统设置中授予，用于取得媒体会话控制能力。此项系统权限能够赋予应用较广的通知访问能力；SleepPause 当前实现只调用媒体会话接口，不保存其他应用的消息通知内容。撤回通知使用权后，媒体会话暂停功能将无法使用。</p>
+<p>健康功能启用前，将通过华为支持的授权流程申请实时心脏数据、睡眠数据和心率数据的读取授权。用户可选择拒绝或在华为提供的授权管理页面撤回。界面路径可能随版本变化，届时以实际授权界面为准。</p>
+<h2>五、第三方组件</h2>
+<p>当前构建已引入 AppGallery Connect 基础包；Health Service Kit 与帐号服务的具体接入尚未完成。当前及拟采用组件如下；未来增加或启用组件时，将先更新相应披露。</p>
+<table><thead><tr><th>组件</th><th>用途／接入状态</th><th>提供方与数据处理说明</th></tr></thead><tbody>
+<tr><td>AppGallery Connect 基础包（com.huawei.agconnect:agconnect-core）</td><td>已引入，用于华为应用服务基础配置。</td><td >提供方：华为软件技术有限公司。当前构建引入 agconnect-core 1.9.1.303，供华为应用服务基础配置使用。应用向该框架提供随安装包配置的应用标识、包名及项目配置；当前业务代码未调用其用户认证、分析统计、云存储或上传健康数据接口。各项 AGC 服务的数据处理按实际启用服务适用的声明执行。<a href="https://developer.huawei.com/consumer/cn/doc/App/20215">AppGallery Connect 数据处理说明</a>。</td></tr>
+<tr><td>华为帐号服务</td><td>拟用于帐号认证和健康数据授权，不收集用户华为帐号密码。</td><td >当前未集成帐号服务 SDK，SleepPause 尚不通过该 SDK 获取帐号个人信息。计划用于华为帐号身份认证和用户授权；具体接入方式、提供方和帐号数据类别将在该功能启用前依实际 SDK 的官方说明披露，用户未同意时不初始化相关帐号能力。<a href="https://developer.huawei.com/consumer/cn/doc/hmscore-common-Guides/privacy-0000001261262707">HMS Core 隐私声明与各能力说明入口</a>。</td></tr>
+<tr><td>Health Service Kit（含实际采用的扩展能力 SDK）</td><td>拟用于用户授权的三项健康数据读取。</td><td>拟采用的扩展能力 SDK 提供方为华为软件技术有限公司。其官方声明列明基本个人信息（性别、出生日期、身高、体重）、运动健康信息，以及设备信息（含 MAC 地址、设备型号和设备名称），用于提供健康数据存储与共享能力、显示与健康服务和识别数据来源。这是 SDK 总体能力的披露，并不表示 SleepPause 申请全部类别；本应用仅计划申请实时心脏、睡眠和心率读取。SDK 尚未接入，启用前将按实际版本核对处理范围并先取得用户同意。<a href="https://developer.huawei.com/consumer/cn/doc/HMSCore-Guides/extended-sdk-data-security-0000001052662461">官方隐私安全声明</a>。</td></tr>
+</tbody></table>
+<p>核对入口：<a href="https://developer.huawei.com/consumer/cn/doc/hmscore-common-Guides/privacy-0000001261262707">HMS Core 隐私声明</a>、<a href="https://developer.huawei.com/consumer/cn/doc/HMSCore-Guides/extended-sdk-data-security-0000001052662461">Health Service Kit 扩展能力 SDK 隐私安全说明</a>。帐号服务和健康功能正式启用前，将按实际集成版本更新适用的具体披露。</p>
+<h2>六、网页访问与托管</h2><p>这两份政策网页由 GitHub Pages 托管。网页不提供健康数据上传、登录或表单，不使用本站脚本收集健康数据。网页托管服务在传输和保障访问安全时可能处理 IP 地址、请求时间、浏览器与网络请求等必要访问数据，该处理与手机应用的健康数据处理不同。托管服务适用其公开隐私说明：<a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub 隐私声明</a>。</p><h2>七、用户选择、清除与联系</h2>
+<p>用户可以在系统通知使用权设置中关闭 SleepPause 授权。健康功能上线后，可停止功能、撤回华为健康授权并退出页面以清除应用的临时展示数据。由于本应用计划不长期留存健康记录，应用清除操作不会删除手表、华为运动健康或华为云中保存的源记录；源记录须通过对应服务管理。</p>
+<p>用户如需了解数据处理、提出更正、删除或撤回同意请求，可联系上文邮箱。开发者将在核实请求并确认所涉及的数据后处理，不以本应用无法控制的第三方数据为已删除作出承诺。</p>
+<h2>八、未成年人、政策变更与功能限制</h2>
+<p>第一阶段测试面向成年用户，不计划向未成年人提供健康数据读取功能。公开发行范围变化时，应先更新适用说明和相关保护措施。</p>
+<p>功能、SDK 或数据处理方式变化时，开发者会更新本政策；如涉及新的敏感信息用途或授权，将在启用前告知并按需要重新取得同意。心率变化无法单独确定用户是否入睡，本应用不提供医学诊断、治疗或准确睡眠识别保证。</p>
+</main></body></html>
